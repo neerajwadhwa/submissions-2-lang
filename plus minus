@@ -1,0 +1,24 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+arr = list(map(int, input().split(' ')))
+
+def positiveFilter(x):
+    return x>0
+
+def negativeFilter(x):
+    return x<0
+
+def zeroFilter(x):
+    return x==0
+
+positiveNos = [i for i in arr if positiveFilter(i)]
+negativeNos = [i for i in arr if negativeFilter(i)]
+zeroNos = [i for i in arr if zeroFilter(i)]
+
+print("{0:.6f}".format(len(positiveNos) / len(arr)))
+print("{0:.6f}".format(len(negativeNos) / len(arr)))
+print("{0:.6f}".format(len(zeroNos) / len(arr)))
