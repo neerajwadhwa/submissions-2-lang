@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int noOfStrings = scan.nextInt();
+        //scan.nextLine();
+        Map<String, Integer> hashMap = new HashMap<>();
+                
+        for(int i = 0; i < noOfStrings; i++){
+            String s = scan.next();
+            if(hashMap.containsKey(s))
+                hashMap.put(s, hashMap.get(s) + 1);
+            else
+                hashMap.put(s, 1);
+            scan.nextLine();
+        }
+        
+        
+        int noOfQueries = scan.nextInt();
+        scan.nextLine();
+        //System.out.print(noOfQueries);
+       // for(int i = 0; i < noOfQueries; i++){
+         //   String s= scan.nextLine();
+           // System.out.println(s);
+        //}
+        
+        for(int i = 0; i < noOfQueries; i++){
+            String s = scan.nextLine();
+            if(hashMap.containsKey(s)){
+                System.out.println(hashMap.get(s));
+            }
+            else
+                System.out.println(0);
+        }
+        
+    }
+}
