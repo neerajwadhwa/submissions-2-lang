@@ -1,0 +1,16 @@
+no = int(input().strip())
+
+di = {}
+
+for i in range(no):
+    ll = input().split()
+    di[ll[0]] = ll[1]
+    
+for i in range(999999):
+    st = input().strip()
+    if st in di.keys():
+        print(st, end="")
+        print("=", end="")
+        print(di[st])
+    else:
+        print("Not found")
