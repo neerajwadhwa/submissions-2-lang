@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.time.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        String time = scan.nextLine().trim();
+        char[] timeArray = time.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        
+        if(time.charAt(8) == 'P' && !(time.charAt(0) == '1' && time.charAt(1) == '2')){
+            
+           System.out.print(12 + Integer.parseInt(time.substring(0,2)) + time.substring(2, 8));
+        }
+        else if(time.charAt(8) == 'P')
+            System.out.print(time.substring(0, 8));
+            
+        else if(time.charAt(8) == 'A' && (time.charAt(0) == '1' && time.charAt(1) == '2')){
+            System.out.print("00" + time.substring(2, 8));
+        }
+        else if(time.charAt(8) == 'A')
+            System.out.print(time.substring(0, 8));
+        
+    }
+}
