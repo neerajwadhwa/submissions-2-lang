@@ -1,0 +1,18 @@
+number = int(input())
+array = input().split()
+
+for i  in range(0, number):
+    array[i] = int(array[i])
+
+
+largest = -11111111
+second = -11111112
+
+for i in array:
+    if(i > largest):
+        second = largest
+        largest = i
+    elif((i > second) & (i < largest)):
+        second = i
+
+print(second)
