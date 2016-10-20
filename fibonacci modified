@@ -1,0 +1,22 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        BigInteger oneTerm = new BigInteger(scan.next());
+        BigInteger twoTerm = new BigInteger(scan.next());
+        long n = scan.nextInt();
+        BigInteger ans = new BigInteger("0");
+        
+        for(int i = 2; i < n; i++){
+            ans = oneTerm.add(twoTerm.multiply(twoTerm));
+            oneTerm = twoTerm;
+            twoTerm = ans;
+        }
+        System.out.print(ans);
+    }
+}
