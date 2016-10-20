@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int items = scan.nextInt();
+        int didNotEat = scan.nextInt();
+        
+        double[] costArray = new double[items];
+        for(int i = 0; i < items; i++)
+            costArray[i] = scan.nextDouble();
+        
+        int annaPaid = scan.nextInt();
+        
+        
+      
+        double runningCost = 0;
+        
+        for(int i = 0; i < items; i++){
+            if(i == didNotEat)
+                continue;
+            else{
+                runningCost += costArray[i] / 2.0;
+            }
+        }
+        
+        if((int)Math.round(runningCost) == annaPaid)
+            System.out.print("Bon Appetit");
+        else
+            System.out.print(annaPaid - (int)Math.round(runningCost));
+       
+    }
+}
