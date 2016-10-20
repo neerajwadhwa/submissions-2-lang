@@ -1,0 +1,20 @@
+string = input()
+sub = input()
+
+count = 0
+firstindex = string.find(sub)
+
+   
+index = 0
+    
+for i in range(len(string)):
+    if(index == 0):
+        index = string.find(sub, i, len(string))
+    else:
+        index = string.find(sub, index + 1, len(string))
+    if(index == -1):
+        break
+    if(index < len(string)):
+        count+=1
+    
+print(count)
