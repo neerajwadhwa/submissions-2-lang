@@ -1,0 +1,13 @@
+ls = input().split()
+
+
+
+for c in ls:
+    for i in c:
+        if i.isupper():
+            print(i.lower(), end="")
+        elif i.islower():
+            print(i.upper(), end="")
+        else:
+            print(i, end="")
+    print(" ", end="")
