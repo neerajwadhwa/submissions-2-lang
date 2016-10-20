@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        int tempCount = 0;
+        int maxCount = 0;
+     
+        String s = new String();
+        s = "";
+        
+        while(number > 0){
+            
+            s = s + (number % 2);
+            number = number >> 1;
+        }
+        
+        String[] obj = s.split("0");
+        Arrays.sort(obj);
+        System.out.print(obj[obj.length - 1].length());
+        
+       /* while(!stack.isEmpty()) {
+            if(stack.pop() == 1){
+                tempCount++;
+                maxCount = tempCount;
+                while(stack.pop() == 1) {
+                    tempCount++;
+                    maxCount = tempCount;
+                }
+                tempCount = 0;
+            }
+            else
+                continue;
+        }
+        
+        int answer = (tempCount > maxCount) ? tempCount : maxCount;
+        
+       // Integer n = 439;
+        //System.out.println(Integer.toBinaryString(n))
+        */
+        //System.out.print(answer);
+        
+    }
+}
